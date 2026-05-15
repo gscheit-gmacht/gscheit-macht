@@ -809,9 +809,17 @@ p { margin: 0; line-height: 1.55; text-wrap: pretty; color: var(--ink-dim); }
   border: 1px solid var(--line);
   box-shadow: 0 20px 60px -30px oklch(0 0 0 / 0.6), inset 0 1px 0 oklch(1 0 0 / 0.04);
 }
-.calendly-inline-widget iframe { background: #111318 !important; }
-@media (max-width: 900px) { .calendly-inline-widget { min-height: 780px; } }
-@media (max-width: 640px) { .calendly-inline-widget { min-height: 1080px; border-radius: 12px; } }
+.calendly-inline-widget iframe { background: #111318 !important; border: 0; display: block; }
+@media (max-width: 900px) { .calendly-inline-widget { min-height: 740px; } }
+@media (max-width: 640px) {
+  .calendly-inline-widget {
+    min-height: 760px;
+    border-radius: 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+    box-shadow: none;
+  }
+}
 .cal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
 .cal-head h4 { font-size: 16px; letter-spacing: -0.01em; }
 .cal-head .nav { display: flex; gap: 6px; }
@@ -1088,7 +1096,7 @@ p { margin: 0; line-height: 1.55; text-wrap: pretty; color: var(--ink-dim); }
   .book-info { padding: 32px 24px; }
   .book-info h3 { font-size: 30px; }
   .book-info p { font-size: 14px; }
-  .book-cal { padding: 14px; }
+  .book-cal { padding: 0; border-top: 0; }
 
   /* contact / form (≥16px font-size prevents iOS focus-zoom) */
   .form-card { padding: 26px 22px; }
