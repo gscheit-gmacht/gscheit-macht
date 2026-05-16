@@ -746,14 +746,18 @@ p { margin: 0; line-height: 1.55; text-wrap: pretty; color: var(--ink-dim); }
   background: linear-gradient(160deg, oklch(1 0 0 / 0.04), oklch(1 0 0 / 0.012));
   border: 1px solid var(--line);
 }
-.pair-list { list-style: none; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; }
+.pair-list { list-style: none; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 28px; }
 .pair-list li {
   display: flex; align-items: baseline; gap: 10px;
   font-size: 15px; padding: 12px 0;
   border-top: 1px solid var(--line);
+  color: var(--ink);
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
 }
-.pair-list li b { font-weight: 500; color: var(--ink); flex: 1; }
-.pair-list li .italic { color: var(--accent-3); font-size: 18px; }
+.pair-list li b { font-weight: 500; color: var(--ink); flex: 1; min-width: 0; }
+.pair-list li .italic { color: var(--accent-3); font-size: 18px; flex-shrink: 0; font-weight: 400; }
 @media (max-width: 600px) { .pair-list { grid-template-columns: 1fr; } }
 .about-foot-card.quote-card {
   background: linear-gradient(160deg, oklch(0.70 0.19 245 / 0.16), oklch(0.62 0.22 295 / 0.08));
@@ -1861,10 +1865,10 @@ function About() {
           <div className="about-foot-card">
             <div className="eyebrow">Was sich ergänzt</div>
             <ul className="pair-list">
-              <li><b>Optik-Insight</b><span className="italic">+</span>Marketing</li>
-              <li><b>Beratungs­erfahrung</b><span className="italic">+</span>Markenstimme</li>
-              <li><b>Detail</b><span className="italic">+</span>System</li>
-              <li><b>Zuhören</b><span className="italic">+</span>Umsetzen</li>
+              <li><b>Branchen­verständnis</b><span className="italic">+</span>Marken­wirkung</li>
+              <li><b>Vertrauen</b><span className="italic">+</span>Sicht­barkeit</li>
+              <li><b>Premium­gefühl</b><span className="italic">+</span>Strategie</li>
+              <li><b>Persönlich­keit</b><span className="italic">+</span>Klarheit</li>
             </ul>
           </div>
           <div className="about-foot-card quote-card">
